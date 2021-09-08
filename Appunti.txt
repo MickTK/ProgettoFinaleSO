@@ -1,0 +1,54 @@
+Compilazione file C
+> gcc program.c	-o nome_eseguibile	// Compila file
+> ./nome_eseguibile			// Esegue
+
+Creazione eseguibile + Debug
+> gcc -g esempio.c -o nome_eseguibile	// Crea eseguibile per il debug
+> gdb nome_eseguibie
+
+Compile
+Assemble
+Link
+
+Makefile
+> gcc -c file1.c
+> gcc -c file2.c
+> gcc file1.o file2.o -lncurses
+> rm ­-f *.o
+
+> gcc file.c -lncurses
+initscr();	// Inizializza schermo
+curs_set(0);	// Nasconde  il cursore
+noecho();	// Nasconde l'input
+cbreak();	// Manda in automatico l'input (nocbreak())
+keypad(stdscr, 1); // Tasti speciali
+getmaxyx(stdscr, MAXY, MAXX);
+timeout();	//
+sizeof();	// Dimensione array (utile per sprite)
+napms();
+beep();
+flash();
+start_color();
+init_pair(n>0, f_color, b_color);
+attron();
+bkgb(COLOR_PAIR(n));		// Cambia colore background
+endwin();	// Ripristina la modalità standard
+
+printw(...);
+mvprintw(y, x, "char");
+scanw(...);
+
+Pipe
+-lpthread
+
+
+cd Desktop/SO/space_invaders/
+gcc -c main.c astronave.c navicelle.c gioco.c
+gcc main.o astronave.o navicelle.o gioco.o -lncurses
+
+gcc main.c -lpthread
+-lpthread -lncurses
+
+idea progetto threads:
+il thread gioco legge di continuo i valori degli oggetti e li salva in variabili locali
+Se i valori sono diversi vengono mostrati a video e vengono fatti tutti i controlli
